@@ -77,7 +77,7 @@ class Build_A_City
       if class_to_reduce == "hunter" || class_to_reduce == "hunters"
         @hunter -= number_of_people.to_i
         print "\n"
-        self.total_population
+        self.total_popul3ation
       elsif class_to_reduce == "farmer" || class_to_reduce == "farmers"
         @farmer -= number_of_people.to_i
         print "\n"

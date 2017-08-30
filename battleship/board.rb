@@ -60,9 +60,9 @@ class Board
     if full?
       raise "Error!"
     end
-    until !board_is_empty?
+      if @grid[random_position[0]][random_position[1]] == nil
       @grid[random_position[0]][random_position[1]] = :s
-    end
+      end
   end
   
   def random_position

@@ -2,9 +2,13 @@ class Car
   
   attr_accessor :current_speed, :max_speed
   
-  def initialize
+  def initialize(max_speed = nil)
     @current_speed = 0
-    @max_speed = 60
+    if max_speed
+      @max_speed = max_speed
+    else
+      @max_speed = 60
+    end
   end
   
   def drive
@@ -20,7 +24,6 @@ class Car
     puts "Vroom!"
     @current_speed += 1
   end
-  
 end
 
 puts "What car do you want to drive?"

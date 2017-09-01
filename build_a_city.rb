@@ -61,7 +61,7 @@ class Build_A_City
       elsif @total_population.to_i == 1000
         puts "Your city is full."
       end
-        if @total_population > 1000
+        if @total_population >= 1000
         puts "Your city is #{@total_population.to_i - 1000} people over the limit, do you want to remove people? ? [Yes/No] ?"
         answer = gets.chomp.downcase
           if answer == "yes"
@@ -170,8 +170,6 @@ class Build_A_City
   
   def play
     add_people
-    puts "------------------------------------------------"
-
     puts "------------------------------------------------"
     overpopulated?
     puts "------------------------------------------------"

@@ -166,6 +166,7 @@ class Build_A_City
       print"\n"
       puts "Your city is kind of unbalanced with an uneven distribution of labor. Try rebuilding your city again."
     end
+    return
   end
   
   def play

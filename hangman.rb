@@ -13,7 +13,7 @@ class Hangman
     @secret_word_length = @referee.pick_secret_word
     puts "Guesser, the length of the word is #{secret_word_length}."
     @guesser.register_secret_length(secret_word_length)
-    @board = Array.new(@secret_word_length, nil) 
+    @board = Array.new(@secret_word_length, "_") 
   end
   
   def update_board
@@ -39,11 +39,6 @@ class HumanPlayer
   end
   
 end
-
-
-
-
-
 
 class ComputerPlayer
   
@@ -127,7 +122,6 @@ class ComputerPlayer
     mcl
   end
  
- 
 
   def handle_response(guessed_letter, indices)
     new_words = []
@@ -151,22 +145,9 @@ class ComputerPlayer
 
     @candidate_words = new_words
   end
-  
-  
-  
+
   def register_secret_length(length)
-    @candidate_words = []
-    @dictionary.each do |word|
-      @candidate_words << word if word.length == length
-    end
-    @candidate_words
+    @candidate_words = @dictionary.select {|word| word.length == length}
   end
 end
 
-
-if $PROGRAM_NAME == __FILE__
-  player1 = HumanPlayer.new("Don")
-  computer1 = ComputerPlayer.new(["leer", "reel", "real", "rear"])
-  game1 = Hangman.new(players = {guesser: @guesser, referee: @referee})
-
-end

@@ -1,18 +1,20 @@
+require_relative "board"
+require_relative "player"
+
 class BattleshipGame
-  attr_accessor :board, :player, :hit
+  
+  attr_accessor :player, :board
   
   def initialize(player = HumanPlayer.new("Don"), board = Board.new)
     @player = player
     @board = board
-    @hit = false
   end
   
   def attack(position)
     if board[position] == :s
-      @hit = true
-      board[position] == :HIT
+      puts " BULLSEYE ! at coordinate #{position}."
+      board[position] = :h
     else
-      @hit = false
       board[position] = :x
     end
   end
@@ -22,11 +24,24 @@ class BattleshipGame
   end
 
   def game_over?
-    board.won?
+    @board.won?
   end
   
+  def play
+    15.times {@board.place_random_ship}
+    until game_over?
+      play_turn
+      @board.display
+    end
+    puts "Game over."
+   end
+  
   def play_turn
-    @player.get_play
     attack(@player.get_play)
   end
+end
+
+if $PROGRAM_NAME == __FILE__
+game1 = BattleshipGame.new
+game1.play
 end

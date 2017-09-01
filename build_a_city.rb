@@ -53,13 +53,30 @@ class Build_A_City
         puts "That is not a valid class, try again."
         print "\n"
         self.total_population
-        break
+        play
       end
     end 
       if @total_population.to_i > 1000
         puts "Your city is #{@total_population.to_i - 1000} people over the limit."
       elsif @total_population.to_i == 1000
         puts "Your city is full."
+      end
+        if @total_population > 1000
+        puts "Your city is #{@total_population.to_i - 1000} people over the limit, do you want to remove people? ? [Yes/No] ?"
+        answer = gets.chomp.downcase
+          if answer == "yes"
+          get_rid_of_people
+        else
+          return
+        end
+      else
+        puts "You have room to add more people now, do you want to add more? ? [Yes/No] ?"
+        answer = gets.chomp.downcase
+        if answer == "yes"
+          add_people
+        else
+          return
+        end
       end
   end
   
@@ -70,14 +87,14 @@ class Build_A_City
       if number_of_people == "none" || number_of_people == "0"
         self.total_population
         puts "You've stopped getting rid of people."
-        break
+         break
       end
         puts "What class do you want to reduce?"
         class_to_reduce = gets.chomp.downcase
       if class_to_reduce == "hunter" || class_to_reduce == "hunters"
         @hunter -= number_of_people.to_i
         print "\n"
-        self.total_popul3ation
+        self.total_population
       elsif class_to_reduce == "farmer" || class_to_reduce == "farmers"
         @farmer -= number_of_people.to_i
         print "\n"
@@ -94,9 +111,18 @@ class Build_A_City
         puts "That is not a valid class, try again."
         print "\n"
         self.total_population
-        break
+        play
       end
-    end
+    end 
+    if @total_population < 1000
+        puts "You have room to add more people now, do you want to add more? ? [Yes/No] ?"
+        answer = gets.chomp.downcase
+        if answer == "yes"
+          add_people
+        else
+          return
+        end
+      end
   end
   
   def overpopulated?
@@ -136,24 +162,31 @@ class Build_A_City
     elsif (22..27).include?(hunter_percentage) && (22..27).include?(farmer_percentage) && (22..27).include?(gatherer_percentage) && (22..27).include?(builder_percentage)
       print "\n"
       puts "There's an ideal percentage of each class in your city. Congratulations, your city is perfect!"
+    else
+      print"\n"
+      puts "Your city is kind of unbalanced with an uneven distribution of labor. Try rebuilding your city again."
     end
   end
   
+  def play
+    add_people
+    puts "------------------------------------------------"
+
+    puts "------------------------------------------------"
+    overpopulated?
+    puts "------------------------------------------------"
+    distribution_of_labor
+    puts "------------------------------------------------"
+  end
+
 end
 
 if $PROGRAM_NAME == __FILE__
   puts "What do you want your city to be named?"
   name = gets.chomp!
+  puts "Your city is named #{name.upcase}."
   name = Build_A_City.new
-  puts "------------------------------------------------"
-  name.add_people
-  puts "------------------------------------------------"
-  name.get_rid_of_people
-  puts "------------------------------------------------"
-  name.overpopulated?
-  puts "------------------------------------------------"
-  name.distribution_of_labor
-  puts "------------------------------------------------"
+  name.play
   puts "You are done with the game... Play again?"
 end
 

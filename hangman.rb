@@ -1,31 +1,40 @@
-require 'pry'
 class Hangman
-  attr_accessor :guesser, :referee, :board, :secret_word, :secret_word_length
+  attr_accessor :guesser, :referee, :board, :secret_word, :number_of_guesses, :secret_word_length
   
   def initialize(players = {})
     @guesser = players[:guesser]
     @referee = players[:referee]
+    @number_of_guesses = 8
     @board = board
   end
   
   def setup
-    puts "Referee, choose a secret word."
     @secret_word_length = @referee.pick_secret_word
-    puts "Guesser, the length of the word is #{secret_word_length}."
-    @guesser.register_secret_length(secret_word_length)
-    @board = Array.new(@secret_word_length, "_") 
+    puts "Guesser, the length of the word is #{@secret_word_length}."
+    @guesser.register_secret_length(@secret_word_length)
+    @board = Array.new(@secret_word_length, nil)
   end
   
-  def update_board
-    @guesser.register_secret_length(secret_word_length)
+  def update_board(guess, indices)
+    indices.each do |index| 
+      @board[index] = guess
+    end
   end
   
+  def play
+    setup
+    until @number_of_guesses == 0
+      puts @board
+      take_turn
+    end
+    puts "Secret word was \"#{@referee.secret_word}\"."
+  end
   
   def take_turn
-    puts "Guesser, take a guess."
     guess = @guesser.guess(@board)
-    indices = @referee.check_guess(@guesser.guess(@board))
-    update_board
+    indices = @referee.check_guess(guess)
+    update_board(guess, indices)
+    @number_of_guesses -= 1 if indices.empty?
     @guesser.handle_response(guess, indices)
   end
 end
@@ -38,15 +47,31 @@ class HumanPlayer
     @name = name
   end
   
+  def register_secret_length(length)
+    puts "Secret word is #{length} letters long"
+  end
+  
+  def handle_response(guess, indices)
+    puts "Found \"#{guess}\" at positions #{indices}"
+  end
+  
+  def guess(board)
+    puts "Take a guess:"
+    guess = gets.chomp!
+  end
+  
 end
 
 class ComputerPlayer
   
-  attr_accessor :dictionary, :secret_word, :candidate_words
+  def self.player_with_dict_file(dict_file_name)
+    ComputerPlayer.new(File.readlines(dict_file_name).map(&:chomp))
+  end
+  
+  attr_accessor :candidate_words, :secret_word
   
   def initialize(dictionary)
     @dictionary = dictionary
-    @candidate_words = candidate_words
   end
   
   def pick_secret_word
@@ -56,11 +81,9 @@ class ComputerPlayer
   
   def check_guess(letter)
     indices = []
-    @dictionary.each do |word|
-      word.split("").each.with_index do |let, index|
+    @secret_word.split("").each.with_index do |let, index|
       if letter == let
         indices << index
-      end
       end
     end
     indices
@@ -121,11 +144,9 @@ class ComputerPlayer
     end
     mcl
   end
- 
 
   def handle_response(guessed_letter, indices)
     new_words = []
-    
     if indices == []
       @candidate_words.each do |word|
         new_words << word unless word.include? guessed_letter
@@ -136,18 +157,21 @@ class ComputerPlayer
         word.split("").each do |letter|
           matches += 1 if letter == guessed_letter
         end
-   
         new_words << word if indices.all? { |idx| word[idx] == guessed_letter && matches == indices.length}
-      
       end
-
     end
-
     @candidate_words = new_words
   end
-
+  
   def register_secret_length(length)
     @candidate_words = @dictionary.select {|word| word.length == length}
   end
 end
 
+
+if $PROGRAM_NAME == __FILE__
+  guesser = HumanPlayer.new("Don")
+  referee = ComputerPlayer.player_with_dict_file("dictionary.txt")
+  game1 = Hangman.new(players = {guesser: guesser, referee: referee})
+  game1.play
+end

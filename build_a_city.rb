@@ -78,6 +78,7 @@ class Build_A_City
           return
         end
       end
+      return
   end
   
   def get_rid_of_people
@@ -123,6 +124,7 @@ class Build_A_City
           return
         end
       end
+      return
   end
   
   def overpopulated?
@@ -150,18 +152,23 @@ class Build_A_City
     if hunter_percentage > 51
       print "\n"
       puts "There's over 51% hunters in your city. Hunters are responsible for hunting animals in the wild for your city to eat. If there are too many of them, who's going to cook, farm, or build?"
+      return
     elsif farmer_percentage > 51
       print "\n"
       puts "There's over 51% farmers in your city. Farmers are responsible for farming for materials for the city. If there's too many of them, who's going to cook, hunt animals, or build the city?"
+      return
     elsif gatherer_percentage > 51
       print "\n"
       puts "There's over 51% gatherers in your city. Gatherers are responsible for gathering supplies and cooking food for the city. If there's too many of them, who's going to hunt, farm for materials, or build the city?"
+      return
     elsif builder_percentage > 51
       print "\n"
       puts "There's over 51% builders in your city. Builders are responsible for construction, engineering, and operating machines to build the city. If there's too many of them, who's going to hunt for food, cook the food, or farm for materials?"
+      return
     elsif (22..27).include?(hunter_percentage) && (22..27).include?(farmer_percentage) && (22..27).include?(gatherer_percentage) && (22..27).include?(builder_percentage)
       print "\n"
       puts "There's an ideal percentage of each class in your city. Congratulations, your city is perfect!"
+      return
     else
       print"\n"
       puts "Your city is kind of unbalanced with an uneven distribution of labor. Try rebuilding your city again."

@@ -1,32 +1,27 @@
 
 class Channel
-  
-  attr_accessor :subscribers, :uploads, :views, :name
-  
-  def initialize(channel = {})
-    @name = channel[:name]
+  attr_reader :subscribers, :uploads, :name
+
+  def initialize(name:)
+    @name = name
     @subscribers = []
     @uploads = []
-    @views = 0
-    
   end
-  
+
   def add_subscriber(name)
     @subscribers << name
   end
-  
   
   def upload(video)
     @uploads << video
   end
   
   def views
+    watches = 0
     @uploads.each do |upload|
-      @views += upload.views
+      watches += upload.views
     end
-    @views
+    watches
   end
-  
-  
-  
 end
+

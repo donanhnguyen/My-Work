@@ -1,21 +1,16 @@
 class Video
   
-  attr_accessor :name, :length, :views, :age_restriction, :video
+  attr_reader :name, :length, :views, :age_restriction
   
-  def initialize(video = {})
-    @video = video
-    @name = video[:name]
-    @length = video[:length]
+  def initialize(name:, length:, age_restriction: nil)
+    @name = name
+    @length = length
     @views = 0
-    @age_restriction = video[:age_restriction]
+    @age_restriction = age_restriction
   end
   
   def age_restricted?
-    if video[:age_restriction]
-      return true
-    else
-      false
-    end
+    !!age_restriction
   end
   
   def add_view

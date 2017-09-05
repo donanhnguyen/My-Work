@@ -1,14 +1,14 @@
 class User
   
-  attr_accessor :name, :email, :age, :subscriptions, :history, :privacy
+  attr_reader :name, :email, :age, :subscriptions, :history, :privacy
   
-  def initialize(user = {})
-    @name = user[:name]
-    @email = user[:email]
-    @age = user[:age]
+  def initialize(name:, email:, age:, privacy: false)
+    @name = name
+    @email = email
+    @age = age
     @subscriptions = []
     @history = []
-    @privacy = user[:privacy]
+    @privacy = privacy
   end
 
   def subscribe_to(channel)
@@ -25,3 +25,4 @@ class User
   end
 
 end
+

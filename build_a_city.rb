@@ -53,7 +53,7 @@ class Build_A_City
         puts "That is not a valid class, try again."
         print "\n"
         self.total_population
-        play
+        add_people
       end
     end 
       if @total_population.to_i > 1000
@@ -112,7 +112,7 @@ class Build_A_City
         puts "That is not a valid class, try again."
         print "\n"
         self.total_population
-        play
+        get_rid_of_people
       end
     end 
     if @total_population < 1000

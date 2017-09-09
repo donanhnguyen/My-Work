@@ -1,6 +1,10 @@
 class Hangman
   attr_accessor :guesser, :referee, :board, :secret_word, :number_of_guesses, :secret_word_length
   
+  DISPLAY = {
+    nil => " "
+  }
+  
   def initialize(players = {})
     @guesser = players[:guesser]
     @referee = players[:referee]
@@ -21,10 +25,20 @@ class Hangman
     end
   end
   
+  def display
+    @board.each do |letter|
+      if letter == nil
+        puts "#{DISPLAY[letter]}"
+      else
+        puts "#{letter}"
+      end
+    end
+  end
+  
   def play
     setup
     until @number_of_guesses == 0
-      puts @board
+      display
       take_turn
     end
     puts "Secret word was \"#{@referee.secret_word}\"."

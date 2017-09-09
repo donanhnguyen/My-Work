@@ -25,7 +25,7 @@ class Player
   end
   
   def guess
-    puts "Enter your guess:"
+    puts "#{@name}, enter your guess:"
     gets.chomp.downcase
   end
   

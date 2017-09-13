@@ -103,3 +103,29 @@ p bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
 p bsearch([1, 2, 3, 5, 6, 7, 8, 9], 1) # => 0
 p bsearch([1, 4, 5, 6, 7, 8], 8) # => 5
 p bsearch([1, 3, 4, 5, 6, 9], 7) # => nil
+
+
+#make change
+
+def make_change(amount, coins)
+  return [] if amount == 0
+
+  best_change = nil
+
+  coins.each do |coin|
+    if amount >= coin
+      remainder = amount - coin
+
+      current_change = [coin] + make_change(remainder, coins)
+      if best_change.nil? || best_change.length > current_change.length
+        best_change = current_change 
+      end
+    end
+  end
+  best_change
+end
+
+p "---------------------------"
+p make_change(24, [10, 7, 1])
+p make_change(24, [8, 5, 1])
+p make_change(25, [10, 5, 1])

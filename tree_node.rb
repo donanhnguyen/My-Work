@@ -43,16 +43,16 @@ class PolyTreeNode
   end
 
   def bfs(target)
-    
     return self if self.value == target
-    balls = [self]
-    until balls.empty?
-      first_one = balls.shift
+    queue = [self]
+    until queue.empty?
+      first_one = queue.shift
       return first_one if first_one.value == target
-      balls.concat(first_one.children)
+      first_one.children.each do |child|
+        queue << child
+      end
     end
     nil
   end
 
-    
 end

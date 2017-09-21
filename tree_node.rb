@@ -43,7 +43,6 @@ class PolyTreeNode
   end
 
   def bfs(target)
-    return self if self.value == target
     queue = [self]
     until queue.empty?
       first_one = queue.shift

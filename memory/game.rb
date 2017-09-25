@@ -27,24 +27,31 @@ class Game
   end
   
   def play
+    tries = 0
     @grid.populate
     until won?
     p "There are #{how_many_cards} cards left on the board."
     display
     take_turn
+      tries += 1
+      p "You tried #{tries} times so far."
     end
     p "YEAH!"
+    p "It took #{tries} tries to finish."
     display
   end
   
   def computer_play
+    tries = 0
     @grid.populate
     until won?
     p "There are #{how_many_cards} cards left on the board."
     display
     computer_take_turn
+      tries += 1
     end
     p "YEAH!"
+    p "It took #{tries} tries to finish."
     display
   end
 

@@ -1,5 +1,5 @@
 require "set"
-
+require "pry"
 class WordChainer
   
   attr_accessor :dictionary, :current_words, :current_word, :all_seen_words

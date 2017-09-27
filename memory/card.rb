@@ -11,4 +11,8 @@ class Card
     @side = "up"
   end
   
+  def hide
+    @side = "down"
+  end
+  
 end

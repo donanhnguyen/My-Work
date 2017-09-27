@@ -61,6 +61,9 @@ class Board
       self[pos].reveal
   end
   
+  def hide(pos)
+      self[pos].hide
+  end
   
   
 end

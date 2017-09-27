@@ -105,10 +105,17 @@ class Game
 
   def take_turn
     first_guess = @player.guess1
+    @grid.reveal(first_guess)
+      display
     second_guess = @player.guess2
+    # @grid.reveal(second_guess)
+    #   display
     if @grid[first_guess].face_value == @grid[second_guess].face_value
       @grid.reveal(first_guess)
       @grid.reveal(second_guess)
+    else
+      @grid.hide(first_guess)
+      @grid.hide(second_guess)
     end
   end
   

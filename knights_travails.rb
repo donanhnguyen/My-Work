@@ -55,6 +55,7 @@ attr_accessor :starting_position, :move_tree, :visited_positions
       new_moves = possible_moves.select { |move| !visited_positions.include?(move) }
       @visited_positions += new_moves
       new_moves
+      # binding.pry
   end
 
   def valid_moves(pos)
@@ -65,6 +66,7 @@ attr_accessor :starting_position, :move_tree, :visited_positions
         valid_moves_at_the_end << [row + x, col + y] unless (row + x < 0 || row + x > 7) || (col + y < 0 || col + y > 7)
     end
     valid_moves_at_the_end
+    
   end
   
 end 
@@ -126,8 +128,8 @@ class PolyTreeNode
 
 end
 
-hi = KnightPathFinder.new([0,0])
-hi.build_move_tree
-end_node = hi.find_path([7,0])
-p hi.trace_back_path(end_node)
+toggaf = KnightPathFinder.new([0,0])
+toggaf.build_move_tree
+end_node = toggaf.find_path([7,0])
+p toggaf.trace_back_path(end_node)
 

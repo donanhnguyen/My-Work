@@ -19,43 +19,50 @@ attr_accessor :starting_position, :move_tree, :visited_positions
     @move_tree = []
     @visited_positions = [starting_position]
   end
-  
+
   def build_move_tree
     queue = [PolyTreeNode.new(@starting_position)]
     until queue.empty?
-      first_one = queue.shift
-      @move_tree << first_one
-      new_move_positions(first_one.value).each do |child_move|
-        new_child_node = PolyTreeNode.new(child_move)
-          first_one.add_child(new_child_node)
-            end
-      queue += first_one.children
+      first_in_line = queue.shift
+      @move_tree << first_in_line
+      child_positions = new_move_positions(first_in_line.value)
+        child_positions.each do |child_pos|
+          new_child_node = PolyTreeNode.new(child_pos)
+          first_in_line.add_child(new_child_node)
+        end
+      first_in_line.children.each do |child_node|
+        queue << child_node
+      end
     end
   end
   
-  def find_path(ending_position)
-    moves = [move_tree.first]
-    until moves.empty?
-      first_one = moves.shift
-      return first_one if first_one.value == ending_position
-      # binding.pry
-      moves += first_one.children
+  def find_path(end_pos)
+    queue = [@move_tree.first]
+    until queue.empty?
+      first_in_line = queue.shift
+      return first_in_line if first_in_line.value == end_pos
+      first_in_line.children.each do |child_node|
+        queue << child_node
+      end
     end
     nil
   end
   
-  def trace_back_path(ending_node)
-    return [ending_node.value] if ending_node.parent.nil?
-    pathway_back = trace_back_path(ending_node.parent) + [ending_node.value]
-    pathway_back
+  def trace_path_back(ending_node)
+    pathway = []
+    current_node = ending_node
+    until current_node.parent.nil?
+    pathway << current_node.value
+      current_node = current_node.parent
+    end
+      (pathway << @starting_position).reverse
   end
   
   def new_move_positions(pos)
-      possible_moves = valid_moves(pos)
-      new_moves = possible_moves.select { |move| !visited_positions.include?(move) }
-      @visited_positions += new_moves
-      new_moves
-      # binding.pry
+    new_positions = valid_moves(pos)
+    new_moves = new_positions.select {|position| !@visited_positions.include?(position)}
+    @visited_positions += new_moves
+    new_moves
   end
 
   def valid_moves(pos)
@@ -66,7 +73,6 @@ attr_accessor :starting_position, :move_tree, :visited_positions
         valid_moves_at_the_end << [row + x, col + y] unless (row + x < 0 || row + x > 7) || (col + y < 0 || col + y > 7)
     end
     valid_moves_at_the_end
-    
   end
   
 end 
@@ -128,8 +134,8 @@ class PolyTreeNode
 
 end
 
-toggaf = KnightPathFinder.new([0,0])
-toggaf.build_move_tree
-end_node = toggaf.find_path([7,0])
-p toggaf.trace_back_path(end_node)
+hi = KnightPathFinder.new([0, 0])
+hi.build_move_tree
+end_node = hi.find_path([7, 6])
+p hi.trace_path_back(end_node)
 

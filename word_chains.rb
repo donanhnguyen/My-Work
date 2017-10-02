@@ -1,5 +1,5 @@
 require "set"
-require "pry"
+
 class WordChainer
   
   attr_accessor :dictionary, :current_words, :current_word, :all_seen_words
@@ -25,37 +25,43 @@ class WordChainer
     end
     nearby_words
   end
-  
-  def explore_current_words
+
+  def explore_new_words
     new_current_words = []
       @current_words.each do |word|
-        adjacent_words(word).each do |adj_word|
-            if !@all_seen_words.include?(adj_word)
-              @all_seen_words[adj_word] = word
-               new_current_words << adj_word
-        
-              end
-            end
+        adjacent_words(word).each do |adjacent_word|
+          if !@all_seen_words.include?(adjacent_word)
+            @all_seen_words[adjacent_word] = word
+            new_current_words << adjacent_word
+          end
         end
+      end 
       new_current_words
   end
   
   def run(source, target)
+    @current_words << source
     @current_word = source
-    @current_words << @current_word
     @all_seen_words[source] = nil
-    until (@all_seen_words.include? target)
-      @current_words = explore_current_words
+    while !@current_words.empty?
+      @current_words = explore_new_words
     end
-    p build_path(target)
+    build_path(source, target)
   end
-  
-   def build_path(target)
-      return [target] if all_seen_words[target] == nil
-      build_path(all_seen_words[target]) + [target]
-   end
 
+   def build_path(source, target)
+      pathway = []
+      current_word = target
+      until @all_seen_words[current_word].nil?
+        pathway << current_word
+        current_word = @all_seen_words[current_word]
+      end
+      if pathway.length <= 1
+        p "There is no valid path with those words."
+      else
+        p (pathway << source).reverse
+      end
+   end
 end
 
 WordChainer.new.run("killer", "dinner")
-

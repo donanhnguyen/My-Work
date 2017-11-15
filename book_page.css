@@ -51,6 +51,11 @@
 
   }
 
+  button:hover {
+    background: lightblue
+
+  }
+
   h1 {
     font-family: Courier New, Courier, monospace;
   }
@@ -75,4 +80,36 @@
     justify-content: flex-end;
 
 
+  }
+  
+
+  .clearfix:after {
+    content: "";
+  
+    display: block;
+    clear: both
+
+
+  }
+
+  .head-container {
+    font-size: 20px;
+    margin: auto;
+  }
+
+  .head-title {
+    float: left
+
+  
+  }
+
+  .head-links {
+   
+    float: right
+
+  } 
+  
+  .head-links a {
+  
+    font-size: 20px;
   }

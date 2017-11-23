@@ -1,0 +1,12 @@
+<h1>This dog's name is : <%=@dog.name%></h1>
+<h1>This dog's breed is : <%=@dog.breed%></h1>
+<h1>This dog's color is : <%=@dog.color%></h1>
+
+
+<%= link_to "See all your dogs", dogs_url %>
+
+<br><br>
+
+<%= link_to "Submit another dog here", new_dog_url %>
+
+<h2>You now have <%= all_dogs.count %> dogs!</h2>

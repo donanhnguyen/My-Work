@@ -1,0 +1,15 @@
+<h1>Here are all the dogs</h1>
+
+<%@all_dogs.each do |dog|  %>
+<br>
+<%= dog.name %>
+<br>
+<%end%>
+
+<br><br>
+
+<%= link_to "Back to home page", welcome_index_url %>
+
+<br><br>
+
+<%= link_to "Submit another dog here", new_dog_url %>

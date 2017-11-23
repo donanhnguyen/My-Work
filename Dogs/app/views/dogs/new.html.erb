@@ -1,0 +1,35 @@
+<h1>Make a new dog</h1>
+
+<body>
+  <form action="<%= dogs_url  %>" method="post">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="dog[name]">
+    
+    <br><br>
+    
+    <label for="breed">Breed</label>
+    <input id="breed" type="text" name="dog[breed]">
+    
+    <br><br>
+    
+    <label for="color">Color</label>
+    <input id="color" type="text" name="dog[color]">
+    
+    <br><br>
+    
+    <input type="submit" value="Submit Dog">
+    
+  </form>
+  
+  <br><br>
+  
+  <%= link_to "Back to home page", welcome_index_url %>
+
+<br><br>
+  
+  <%= link_to "All the dogs here", dogs_url %>
+
+<br><br>
+  
+  
+</body>

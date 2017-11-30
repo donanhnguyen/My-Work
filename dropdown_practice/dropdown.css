@@ -65,3 +65,32 @@
     color: white;
     
   }
+  
+  
+  .parent-container {
+    display: flex;
+    margin: auto;
+    width: 792px;
+    min-height: 200px;
+    background: white;
+    border: 2px solid red;
+    
+    
+    
+  }
+  
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    /*margin: auto;*/
+    width: 50%;
+    word-wrap: break-word;
+    background: white;
+    color: black;
+    border: 2px solid black;
+    
+    
+    
+    
+  }

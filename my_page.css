@@ -1,0 +1,210 @@
+.main-page {
+  background-image: url("http://standardflags.com/shop/wp-content/uploads/2013/01/Nylon-American-Flag-closeup-1.jpg");
+  background-repeat: repeat;
+  font-family: arial;
+  font-size: 30px;
+  color: white;
+}
+
+.header-dropdown {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  width: 900px;
+  border: 1px solid blue;
+  background: black;
+  z-index: 999;
+}
+
+.header-dropdown ul {
+
+  margin: 0px;
+  padding: 0px;
+  
+}  
+
+.header-dropdown ul li {
+  float: left;
+  background-color: black;
+  border: 1px solid white;
+
+  height: 40px;
+  text-align: center;
+
+
+}
+
+
+
+.header-dropdown ul li:hover, .header-dropdown ul li ul li:hover {
+  background-color: green;
+}
+
+
+.header-dropdown ul li ul li {
+  display: none;
+}
+
+.header-dropdown ul li:hover ul li {
+  display: block;
+  float: none;
+  
+}
+
+
+.contact-page {
+  background: green;
+  font-size: 100px;
+  
+}
+
+
+.cities {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  color: orange;
+  border: 1px solid white;
+  background: black;
+  opacity: 0.8;
+  width: 900px;
+  font-size: 30px;
+
+}
+
+
+.cities ul li {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  float: left;
+}
+
+
+
+ul {
+  list-style: none;
+}
+
+
+
+
+.container-2 {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  border: 2px solid gray;
+  background-color: white;
+  width: 900px;
+  height: 200px;
+  background-image: url("http://www.lynden.com/aml/about/locations/images/web-locations-seattle.jpg")
+
+  
+
+}
+
+
+.container-2 h1 {
+  
+  color: white;
+  padding: 20px;
+  
+  
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  border: 1px solid gray;
+  background-color: white;
+  width: 900px;
+  min-height: 900px
+  
+  
+}
+
+
+
+
+.side-bio {
+  
+  width: 30%;
+  border: 1px solid green;
+  text-align: center;
+  word-wrap: break-word;
+  color: black;
+}
+
+
+.profile-pic {
+  display: flex;
+  margin: auto;
+  position: relative;
+  top: -50px;
+  width: 180px; 
+  height: 180px;
+  border: 5px solid orange;
+}
+
+
+.bio-list {
+
+
+}
+
+.bio-list button {
+  display: block;
+  padding: 3px;
+  border: 2px solid blue;
+  width: 100%;
+  font-size: 20px;
+}
+
+
+
+.bio-list li:hover {
+  background: gray;
+
+  
+}
+
+
+.main-feed {
+
+  width: 70%;
+  border: 1px solid green;
+  background: gray;
+  text-align: center;
+  word-wrap: break-word;
+  
+}
+
+
+.feed-box {
+  border: 1px solid black;
+  background: gray;
+  text-align: center;
+  word-wrap: break-word;
+  min-height: 260px;
+}
+
+
+
+
+.sub-feed-box {
+  
+  border: 1px solid black;
+  background: white;
+  text-align: center;
+  word-wrap: break-word;
+  min-height: 230px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
+  font-size: 20px;
+  
+}

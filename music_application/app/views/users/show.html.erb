@@ -1,0 +1,16 @@
+
+
+
+
+<% if current_user %>
+
+  <h1>You are logged in as <%= current_user.email %> </h1>
+
+<% else  %>
+
+  <h1>You are not logged in...</h1>
+  
+  <%= link_to "Log in here", new_session_url %>
+
+
+<% end  %>

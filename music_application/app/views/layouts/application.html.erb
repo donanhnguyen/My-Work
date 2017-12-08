@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+  <% if logged_in?  %>
+    
+     <div>
+            <p>Logged in as: <%= current_user.email %></p>
+          <form action=<%= session_url %> method='post'>
+            <input
+              type="hidden"
+              name="_method"
+              value="delete">
+            <input
+              type="hidden"
+              name="authenticity_token"
+              value="<%= form_authenticity_token %>">
+            <input 
+              type="submit" value="Sign Out">
+          </form>
+    
+    </div>
+      <% else %>
+      
+      <h1>You aint signed in, sign up below bitch! Or sign back in...</h1>
+      
+      
+      <h2>Sign up here</h2>
+      <form action="<%= users_url %>" method="POST">
+        <input
+              type="hidden"
+              name="authenticity_token"
+              value="<%= form_authenticity_token %>">
+        
+        
+        <label for="email">Email</label>
+        <input id="email" name="user[email]" type="text">
+  
+  
+        <br> <br>
+  
+        <label for="password">Password</label>
+        <input id="password" name="user[password]" type="text">
+  
+        <br> <br>
+  
+        <input type="submit" value="Sign up!">
+      </form>
+    
+      <h3>Or sign back in <a href="<%= new_session_url %>">here</a></h3>
+    
+    
+  <% end %>
+    
+    
+    
+    
+    
+    
+    
+    <%= yield %>
+  </body>
+</html>

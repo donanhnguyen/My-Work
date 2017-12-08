@@ -184,7 +184,7 @@ ul {
 
 .feed-box {
   border: 1px solid black;
-  background: gray;
+  background: rgb(0, 31, 71);
   text-align: center;
   word-wrap: break-word;
   min-height: 260px;
@@ -205,6 +205,16 @@ ul {
   margin-left: 10px;
   margin-right: 10px;
   color: black;
-  font-size: 20px;
+  font-size: 18px;
   
+}
+
+.novel-pic {
+
+  width: 290px;
+  height: 450px;
+  border: 1px solid blue;
+
+
+
 }

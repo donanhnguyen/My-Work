@@ -1,0 +1,13 @@
+
+<% if !@selected_band.nil? %>
+  <h1>You are on the band page of : <%= @selected_band.name %>  </h1>
+<% else %>
+  <h1>You got not band.</h1>
+
+<% end %>
+
+<%= link_to "Add another band here", new_band_url %>
+
+<br><br><br>
+
+<%= link_to "See all your bands here", bands_url %>

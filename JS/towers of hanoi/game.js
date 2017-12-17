@@ -90,5 +90,5 @@ class Game {
   // closing bracket of class
   }
   
-  module.exports = Game;
+module.exports = Game;
   

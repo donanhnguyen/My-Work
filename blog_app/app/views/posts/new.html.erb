@@ -1,0 +1,24 @@
+<h1>Make a post</h1>
+
+<body>
+  <form action="<%= posts_url %>" method="post">
+   
+    
+    <label for="subject">Subject</label>
+    <br><br>
+    <input id="subject" type="text" name="post[subject]">
+    
+    <br><br>
+    
+    <label for="body">Body</label>
+    <br><br>
+    <textarea id="body" type="text" name="post[body]"></textarea>
+    
+    <br><br>
+    
+    <input type="submit" value="Submit post">
+    
+  </form>
+  
+
+</body>

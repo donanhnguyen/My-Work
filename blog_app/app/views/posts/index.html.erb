@@ -1,0 +1,14 @@
+<h1>Here are all the posts:</h1>
+
+
+<h2>
+    
+    <br>
+<% @all_posts.sort.reverse.each do |post|     %>
+
+ <%=  link_to "#{post.subject}", post_url(post)  %> <p class="comment-date">Posted <%= time_ago_in_words(post.created_at) %> ago </p>
+
+<br><br>
+<%  end %>
+
+</h2>

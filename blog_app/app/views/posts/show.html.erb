@@ -1,0 +1,52 @@
+<h1> <%= @select_post.subject %> </h1>
+
+<div class="post-body">
+    <p class="comment-date">Posted <%=  time_ago_in_words(@select_post.created_at)  %> ago</p>
+    <p>   <%= @select_post.body %></p>
+</div>
+
+<br><br>
+
+<button> <%= link_to "Edit Post", edit_post_url(@select_post) %>  </button>
+
+<br><br>
+
+<button>  <%= link_to "Delete Post", post_url(@select_post), method: :delete, data: {confirm: "Are you sure?"}  %>   </button>
+
+<h1> <%= @select_post.comments.length %> Comments:</h1>
+    <div class="comments-section">
+        <% @select_post.comments.sort.reverse.each do |comment|   %>
+        <ul>
+        <div class="single-comment">
+            <p class="comment-date">Posted <%= time_ago_in_words(comment.created_at) %> ago</p>
+            <li> <%= comment.body %></li>
+            <button> <%= link_to "Edit Comment", [comment.post, comment], method: :edit %>  </button>
+            <button>  <%= link_to "Delete Comment", [comment.post, comment], method: :delete  %>   </button>
+        </div> 
+        </ul>
+        <%  end   %>
+    </div>
+ 
+
+<br>
+<form action="<%= post_comments_url(@select_post)  %>" method="post">
+    <!-- <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"> -->
+
+    <input
+    type="hidden"
+    name="comment[post_id]"
+    >
+
+
+    <label for="body"></label>
+    <br>
+    <textarea id="body" type="text" name="comment[body]"></textarea>
+    
+    <br>
+    
+    <input type="submit" value="Post Comment">
+
+</form>

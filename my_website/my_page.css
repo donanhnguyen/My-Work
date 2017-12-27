@@ -172,7 +172,7 @@ ul {
 
 
 .main-feed {
-
+  
   width: 70%;
   border: 1px solid green;
   background: gray;
@@ -219,7 +219,13 @@ ul {
 
 }
 
+.footer-container {
+  display: flex;
+}
+
+
 .footer {
+  
   margin: auto;
   width: 900px;
   min-height: 50px;
@@ -237,15 +243,20 @@ ul {
 }
 
 .footer-list {
-
-  display: flex;
+  
   float: right;
 
 }
 
 .footer-list li {
-
+  float: left;
   margin-left: 7px;
   margin-right: 7px;
+
+}
+
+.stop-float {
+  border: 1px solid black;
+  clear: both;
 
 }

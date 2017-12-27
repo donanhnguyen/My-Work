@@ -1,0 +1,22 @@
+<h1>EDIT THIS post</h1>
+
+<body>
+  <form action="<%= post_url(@select_post) %>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+    
+    <label for="subject">Subject</label>
+    <input id="subject" type="text" name="post[subject]" value="<%= @select_post.subject  %>">
+    
+    <br><br>
+    
+    <label for="body">Body</label>
+    <textarea id="body" type="text" name="post[body]"> <%= @select_post.body  %></textarea>
+    
+    <br><br>
+    
+    <input type="submit" value="Edit post">
+    
+  </form>
+  
+
+</body>

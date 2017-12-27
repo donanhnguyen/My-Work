@@ -12,12 +12,12 @@ class Game {
     
     
   // h
-    promptMove (reader, callback) {
+    promptMove (reader, callback) { 
       reader.question('Where do you want to get disc from? :', (startTowerIdx) => {
         const startDiscIndex = parseInt(startTowerIdx);
-      reader.question('Where do you want to place the disc? :', (endTowerIdx) => {
-        const endDiscIndex = parseInt(endTowerIdx);
-        callback(startDiscIndex, endDiscIndex)
+        reader.question('Where do you want to place the disc? :', (endTowerIdx) => {
+          const endDiscIndex = parseInt(endTowerIdx);
+          callback(startDiscIndex, endDiscIndex)
         });
       });
     }
@@ -61,10 +61,30 @@ class Game {
     
     
     
+    // magicFunction (startTowerIdx, endTowerIdx) {
+    //   if (this.move(startTowerIdx, endTowerIdx)) {
+    //     console.log("Valid Move!");
+    //   } else {
+    //     console.log("Invalid Move!");
+    //   }
+
+    //   if (!this.won()) {
+    //     this.run(reader, callbackfunct);
+    //   } else {
+    //     this.print();
+    //     console.log("You are done with the game!")
+    //     callbackfunct();
+    //   }
+
+    // }
+
+
   // h
     run (reader, callbackfunct) {
       this.print();
-      this.promptMove(reader, (startTowerIdx, endTowerIdx) => {
+      // console.log(this);
+      // this.promptMove(reader, magicFunction);
+      const doThingsWithInput = (startTowerIdx, endTowerIdx) => {
         if (this.move(startTowerIdx, endTowerIdx)) {
           console.log("Valid move!");
           } else {
@@ -79,8 +99,8 @@ class Game {
           console.log("YOU ARE DONE.");
           callbackfunct();
         }
-        
-      });
+      }
+      this.promptMove(reader, doThingsWithInput);
     }
     
     

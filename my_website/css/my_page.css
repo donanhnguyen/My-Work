@@ -13,7 +13,7 @@
   width: 900px;
   border: 1px solid blue;
   background: black;
-  z-index: 999;
+  
 }
 
 .header-dropdown ul {
@@ -27,7 +27,7 @@
   float: left;
   background-color: black;
   border: 1px solid white;
-
+  width: 175px;
   height: 40px;
   text-align: center;
 
@@ -98,8 +98,8 @@ ul {
   background-color: white;
   width: 900px;
   height: 200px;
-  background-image: url("http://www.lynden.com/aml/about/locations/images/web-locations-seattle.jpg")
-
+  background-image: url("http://www.lynden.com/aml/about/locations/images/web-locations-seattle.jpg");
+  
   
 
 }
@@ -137,38 +137,27 @@ ul {
   color: black;
 }
 
+.side-bio p {
+
+  font-size: 20px;
+ 
+}
 
 .profile-pic {
   display: flex;
   margin: auto;
   position: relative;
-  top: -50px;
+  top: -30;
   width: 180px; 
   height: 180px;
   border: 5px solid orange;
 }
 
-
-.bio-list {
-
-
+.expand-pic {
+  width: 300px;
+  height: 300px;
 }
 
-.bio-list button {
-  display: block;
-  padding: 3px;
-  border: 2px solid blue;
-  width: 100%;
-  font-size: 20px;
-}
-
-
-
-.bio-list li:hover {
-  background: gray;
-
-  
-}
 
 
 .main-feed {
@@ -195,11 +184,12 @@ ul {
 
 .sub-feed-box {
   
-  border: 1px solid black;
+  border: 5px solid rgb(157, 206, 155);
+  border-radius: 15px;
   background: white;
   text-align: center;
   word-wrap: break-word;
-  /* min-height: 230px; */
+  min-height: 230px;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -261,6 +251,28 @@ ul {
 
 }
 
+
+.don-messages {
+  font-family: Cambria;
+}
+
+.don-messages h1 {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.new-message {
+  font-size: 20px;
+  color: rgb(5, 93, 171);
+  margin-left: 10px;
+  text-align: left;
+}
+
+
+
+
+
+
 .form-thumb {
   width: 80px;
   height: 80px;
@@ -276,7 +288,7 @@ ul {
 .form-header {
   float: right;
   margin-right: 30px;
-
+  font-size: 35;
 }
 
 

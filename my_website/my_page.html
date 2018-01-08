@@ -1,11 +1,18 @@
 <html>
   <head>
-  <link href="my_page.css" rel="stylesheet">
+    <title>Don A. Nguyen</title>
+
+  <link href="./css/my_page.css" rel="stylesheet">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/messages.js"></script>
+
   </head>
+
 <body class="main-page">
   <h1 style="text-align: center">Don A. Nguyen</h1>
   
-  <h2 style="text-align: center">Developer, Author, Recruiter</h2>
+  <h2 style="text-align: center">Developer, Recruiter, Author</h2>
   
   <div class="cities">
     <ul>
@@ -50,7 +57,7 @@
   
 <div class="container-2">
   
-  
+    
 
 </div>
 
@@ -59,56 +66,52 @@
 <div class="content-container">
   
     <div class="side-bio">
-    <img class="profile-pic" src="index.png">
+    <img id ="profile-pic" class="profile-pic" src="index.png">
       <h1>Bio</h1>
-
-      <p>
-        
-
-      </p>
-
-      <ul class="bio-list">
-        <button><li>Writing</li></button>
-        <button><li>Sex</li></button>
-        <button><li>Hobbies</li></button>
-        <button><li>Photos</li></button>
-      </ul>
+      <p>Hi there, welcome to my page. My name is Don Wind and I like thick girls with big thighs, look to the right to see my shit. Message me somethin bitch if you want, but yo bitch chill, then check out some of my cool shit like my jit HUB up top and linked IN bitch.</p>
+     
     </div>
     
     
     
     <div class="main-feed">
-      
+
+        <div class="feed-box">
+            <div class="sub-feed-box don-messages">
+              <h1 id="messages-list">Don's messages:</h1>
+              
+            </div>
+          </div>
 
         <div class="feed-box">
             <div class="sub-feed-box">
               <img class="form-thumb" src="index.png">
               <h1 class="form-header">Send a message to Don:</h1>
              
-              <form>
+              <form id="message-form">
 
-                <div class="stop-float"></div>
+                  <div class="stop-float"></div>
 
 
 
-                <div class="input">
-                  <label for="author">Who you are:</label>
+                  <div class="input">
+                    <label for="message-author">Who you are:</label>
+                      <br>
+                    <input id="message-author" type="text">
+                      <br>
+                  </div>
+
+                  <div class="input">
+                    <label for="message-content">What the fuck do you want:</label>
+                      <br>
+                    <textarea id="message-content" type="text"></textarea>
+                  </div>
+
                     <br>
-                  <input id="author" type="text">
-                    <br>
-                </div>
 
-                <div class="input">
-                  <label for="content">What the fuck do you want:</label>
-                    <br>
-                  <textarea id="content"type="text"></textarea>
-                </div>
-
-                  <br>
-
-                <div class="submit-button">
-                  <input type="submit" value="Post to Don">
-                </div>
+                  <div class="submit-button">
+                    <input type="submit" value="Message Don">
+                  </div>
 
               </form>
             </div>

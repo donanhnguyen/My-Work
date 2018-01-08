@@ -1,0 +1,13 @@
+.clicked {
+
+    font-size: 40px;
+    color: red;
+    font-family: arial;
+    width: 200px;
+    height: 30px;
+    background: green;
+    border: 1px solid yellow;
+    padding: 20px;
+
+
+}

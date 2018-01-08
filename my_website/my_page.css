@@ -256,7 +256,71 @@ ul {
 }
 
 .stop-float {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   clear: both;
 
+}
+
+.form-thumb {
+  width: 80px;
+  height: 80px;
+ 
+  border: 1px solid rgb(0, 0, 0);
+  
+  float: left;
+  margin-top: 8px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+.form-header {
+  float: right;
+  margin-right: 30px;
+
+}
+
+
+
+.input input, .input textarea, .input label {
+  display: flex;
+  padding: 12px;
+
+}
+
+.input input {
+  height: 30px;
+  font-size: 20px;
+  margin-left: 10px;
+  width: calc(100% - 50px);
+  height: 60px;
+  border: 2px solid rgb(0, 7, 3);
+  border-radius: 10px;
+}
+
+.input textarea {
+  margin-left: 10px;
+  font-size: 20px;
+  height: 75px;
+  width: calc(100% - 50px);
+  border: 2px solid rgb(0, 7, 3);
+  border-radius: 10px;
+}
+
+.submit-button {
+  display: flex;
+  padding: 10px;
+  
+  
+  
+
+
+}
+
+.submit-button input {
+  color: white;
+  font-size: 30px;
+  width: 200px;
+  background: rgb(92, 199, 218);
+  border: 2px solid rgb(0, 7, 3);
+  border-radius: 10px;
 }

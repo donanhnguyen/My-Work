@@ -62,10 +62,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // adding new photos
-
-  // --- your code here!
-
-
-
 });

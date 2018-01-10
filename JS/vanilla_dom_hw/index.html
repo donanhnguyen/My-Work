@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vanilla DOM Homework</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript" src="./script.js"></script>
+  </head>
+
+  <body>
+    <div class="sf-food">
+      these are some of the reasons you shouldn't live in SF:
+
+      <ul id="restaurants">
+        <li>it's expensive</li>
+        <li>it's expensive</li>
+        <li>it's stiupid</li>
+        
+      </ul>
+    </div>
+
+    <br/>
+
+    <div class="list-container">
+      Do you have more reasons why SF sucks? Add them below:
+      <br/>
+
+      <form id="form-submit">
+        <input type="text" class="favorite-input" id="favorite-input"/>
+        <input type="submit" class="favorite-submit" value="Add to list"/>
+      </form>
+
+
+      <ul id="sf-places">
+        <li>expensive</li>
+        <li>stupid</li>
+        <li>traffic</li>
+      </ul>
+    </div>
+
+    <button type="button" class="photo-show-button" id="dog-button">Toggle new photo form</button>
+
+    <div id="dog-form-div" class="photo-form-container hidden">
+      <form id="dog-form">
+        <input id="dog-img-url" type="text" class="photo-url-input" placeholder="image URL"/>
+        <input type="submit" class="photo-url-submit" value="Add photo"/>
+      </form>
+    </div>
+
+    <ul id="listofdogphotos" class="dog-photos">
+      <li><img src="http://i.imgur.com/T26TiZ1.jpg"/></li>
+      <li><img src="http://www.golden-retriever.com/wp-content/uploads/2015/06/cute-golden-retriever-happy-puppies.jpg"/></li>
+      <li><img src="https://s-media-cache-ak0.pinimg.com/564x/fd/b6/c0/fdb6c0bc1ee189e926f965b616b49cb1.jpg"/></li>
+    </ul>
+
+  </body>
+
+</html>

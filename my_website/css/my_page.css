@@ -253,7 +253,7 @@ ul {
 
 
 .don-messages {
-  font-family: Cambria;
+  
 }
 
 .don-messages h1 {
@@ -335,4 +335,22 @@ ul {
   background: rgb(92, 199, 218);
   border: 2px solid rgb(0, 7, 3);
   border-radius: 10px;
+}
+
+.hide-this-shit {
+
+  display: none;
+
+}
+
+#message-form-trigger {
+
+    font-size: 40px;
+    border: 2px solid rgb(103, 103, 228);
+    border-radius: 20px;
+    width: 100%;
+    color: white;
+    background: rgb(178, 226, 240);
+  
+
 }

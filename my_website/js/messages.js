@@ -38,8 +38,19 @@ $( () => {
 
     }
 
-    $("#message-form").on("submit", submitMessage);
+    $("#message-form").on("submit", submitMessage.bind(this));
 
+    
+    var messageFormTrigger = document.getElementById("message-form-trigger");
+
+
+    messageFormTrigger.addEventListener("click", (event) => {
+
+        var messageForm = document.getElementById("hidden-form-div");
+        messageForm.classList.toggle("hide-this-shit");
+
+
+    })
 
 
   

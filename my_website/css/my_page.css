@@ -6,6 +6,24 @@
   color: white;
 }
 
+
+#name-title {
+  border: 1px solid white;
+  background: rgb(51, 135, 205);
+  margin: auto;
+  width: 900px;
+  opacity: 0.9;
+
+}
+
+#occupation-header {
+  border: 1px solid white;
+  background: rgb(82, 118, 148);
+  margin: auto;
+  width: 900px;
+  opacity: .9;
+}
+
 .header-dropdown {
   display: flex;
   margin: auto;
@@ -63,7 +81,7 @@
   display: flex;
   justify-content: space-around;
   margin: auto;
-  color: orange;
+  color: rgb(114, 222, 119);
   border: 1px solid white;
   background: black;
   opacity: 0.8;
@@ -92,13 +110,13 @@ ul {
 
 .container-2 {
   display: flex;
-  justify-content: space-between;
   margin: auto;
   border: 2px solid gray;
   background-color: white;
   width: 900px;
-  height: 200px;
-  background-image: url("http://www.lynden.com/aml/about/locations/images/web-locations-seattle.jpg");
+  height: 240px;
+  background-image: url("https://www.mckinsey.com/~/media/McKinsey/Locations/North%20America/West%20Coast/Seattle/WCO_Seattle_hero_GettyImages-479505626_rf_1536x768_crop-right.ashx?mw=1536&car=546:205&cpx=Right&cpy=Center");
+  background-size: 100% 100%;
   
   
 
@@ -322,11 +340,8 @@ ul {
   display: flex;
   padding: 10px;
   
-  
-  
-
-
 }
+
 
 .submit-button input {
   color: white;
@@ -335,6 +350,12 @@ ul {
   background: rgb(92, 199, 218);
   border: 2px solid rgb(0, 7, 3);
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-button input:hover {
+  background: rgb(18, 126, 108);
+
 }
 
 .hide-this-shit {
@@ -351,6 +372,10 @@ ul {
     width: 100%;
     color: white;
     background: rgb(178, 226, 240);
-  
+    cursor: pointer;
 
+}
+
+#message-form-trigger:hover {
+  background: rgb(75, 194, 184);
 }

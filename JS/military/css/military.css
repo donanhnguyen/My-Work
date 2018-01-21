@@ -1,6 +1,6 @@
 body {
-    background-image: url("http://standardflags.com/shop/wp-content/uploads/2013/01/Nylon-American-Flag-closeup-1.jpg");
-    background-repeat: repeat;
+    background-image: url('https://wallpapertag.com/wallpaper/full/6/8/9/422075-american-flag-desktop-background-3840x2160-htc.jpg');
+    background-size: 100%;
     font-family: arial;
 }
 
@@ -39,8 +39,8 @@ input {
     
     border: 2px solid rgb(89, 146, 245);
     border-radius: 10px;  
-    
-    background: white;
+    color: white;
+    background: rgb(37, 90, 155);
 
 }
 
@@ -61,13 +61,13 @@ input {
 
 .add-buttons button {
 
-    background: rgb(191, 109, 109);
+    background: rgb(23, 52, 126);
     color: white;
     cursor: pointer;
 }
 
 .add-buttons button:hover {
-    background: rgb(145, 29, 29);
+    background: rgb(47, 93, 128);
 }
 
 .clear-button {

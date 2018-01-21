@@ -1,0 +1,84 @@
+body {
+    background-image: url("http://standardflags.com/shop/wp-content/uploads/2013/01/Nylon-American-Flag-closeup-1.jpg");
+    background-repeat: repeat;
+    font-family: arial;
+}
+
+
+button {
+    
+    font-size: 20px;  
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 10px;
+      
+}
+
+input {
+    font-size: 15px;
+    height: 50px;
+    
+
+}
+
+.military-header {
+    text-align: center;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);   
+      
+}
+
+
+.branches {
+
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    
+    width: 900px;
+    
+    border: 2px solid rgb(89, 146, 245);
+    border-radius: 10px;  
+    
+    background: white;
+
+}
+
+.branches h1 {
+    padding: 10px;
+}
+
+.add-buttons {
+
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 900px;
+    border: 1px solid green;
+    background: black;
+
+}
+
+.add-buttons button {
+
+    background: rgb(191, 109, 109);
+    color: white;
+    cursor: pointer;
+}
+
+.add-buttons button:hover {
+    background: rgb(145, 29, 29);
+}
+
+.clear-button {
+    display: block;
+    margin: auto;
+    width: 200px;
+    background: rgb(33, 65, 121);
+    color: white;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background: rgb(89, 161, 216);
+}

@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 class Military {
 
     constructor () {
@@ -167,4 +170,4 @@ class Military {
 }
 
 
-module.exports = Military;
+export default Military;

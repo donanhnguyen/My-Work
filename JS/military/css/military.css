@@ -35,7 +35,7 @@ input {
     justify-content: space-around;
     margin: auto;
     
-    width: 900px;
+    min-width: 900px;
     
     border: 2px solid rgb(89, 146, 245);
     border-radius: 10px;  

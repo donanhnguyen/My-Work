@@ -1,44 +1,35 @@
-$( () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-  
-    const $profilePic = $("#profile-pic");
-
-    $profilePic.on("click", function(event) {
-
-        const $this = $(this);
-        console.log($this);
-        $this.toggleClass("expand-pic");
-
-    })
 
     const clearForm = function () {
-        $("#message-author").val("");
-        $("#message-content").val("");
+        document.getElementById("message-author").value = "";
+        document.getElementById("message-content").value = "";
     }
 
 
     const submitMessage = function (event) {
         event.preventDefault();
 
-        const $newMessage = $("<p>");
-        const $messageAuthor = $("#message-author");
-        const $messageContent = $("#message-content");
+        const newMessage = document.createElement("p");
+        const messageAuthor = document.getElementById("message-author");
+        const messageContent = document.getElementById("message-content");
+        const messagesList = document.getElementById("messages-list");
 
-        $newMessage.text($messageAuthor.val() + " wrote: " + $messageContent.val());
-        $newMessage.addClass("new-message");
+        newMessage.innerText = (messageAuthor.value + " wrote :" + messageContent.value);
+        newMessage.setAttribute("class", "new-message");
 
-        if ($messageAuthor.val() === "" || $messageContent.val() === "") {
+        if (messageAuthor.value === "" || messageContent.value === "") {
            alert("You didn't fill out all the info...");
         } else {
-            $("#messages-list").append($newMessage); 
-            console.log($newMessage.text());
+            messagesList.appendChild(newMessage); 
+            console.log(newMessage.innerText);
         }
 
         clearForm();
 
     }
 
-    $("#message-form").on("submit", submitMessage.bind(this));
+    document.getElementById("message-form").addEventListener("submit", submitMessage.bind(this));
 
     
     var messageFormTrigger = document.getElementById("message-form-trigger");

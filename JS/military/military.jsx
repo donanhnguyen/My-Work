@@ -94,6 +94,7 @@ class Military extends React.Component {
         return (
 
         <div>
+        
                 <div class="branches">
                     <h1 id="army-header">Army: {this.state.army}</h1>
                     <h1 id="navy-header">Navy: {this.state.navy}</h1>

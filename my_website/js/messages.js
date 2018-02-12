@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+   
+    document.getElementById("profile-pic").addEventListener('click', (event) => {
+        event.currentTarget.classList.toggle("expand-pic");
+    })
+
+        
 
     const clearForm = function () {
         document.getElementById("message-author").value = "";

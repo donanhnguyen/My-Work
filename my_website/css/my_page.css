@@ -172,8 +172,11 @@ ul {
 }
 
 .expand-pic {
-  width: 300px;
-  height: 300px;
+  width: 800px;
+  height: 800px;
+  border: 15px solid black;
+  filter: grayscale()
+
 }
 
 

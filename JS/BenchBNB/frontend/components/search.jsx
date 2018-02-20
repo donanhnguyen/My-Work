@@ -11,7 +11,7 @@ class Search extends React.Component {
    
     render () {
         return (
-            <div class="bench-shit">
+            <div className="bench-shit">
                 <BenchMap benches={this.props.benches} fetchBenches={this.props.fetchBenches}/>
                 <BenchIndex 
                     benches={this.props.benches} 

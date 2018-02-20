@@ -17753,3 +17753,1481 @@ Processing by Api::BenchesController#index as JSON
 Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-02-19 20:53:07 -0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 2100ms (Views: 2096.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 20:53:10 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (2.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (51.5ms)
+Completed 200 OK in 69ms (Views: 40.9ms | ActiveRecord: 24.4ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 20:53:27 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HCq_h-IN7pJ-MpJB7M7HnQ"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HCq_h-IN7pJ-MpJB7M7HnQ"], ["updated_at", "2018-02-20 04:53:27.921485"], ["id", 8]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 98ms (Views: 11.5ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 20:53:28 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.4ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/benches/8" for 127.0.0.1 at 2018-02-19 20:53:34 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"8"}
+Started GET "/" for 127.0.0.1 at 2018-02-19 20:53:34 -0800
+Processing by StaticPagesController#root as HTML
+  [1m[36mBench Load (1.3ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 8]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 153ms (ActiveRecord: 12.2ms)
+
+
+Completed 200 OK in 208ms (Views: 205.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 20:53:34 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (6.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (9.6ms)
+Completed 200 OK in 21ms (Views: 14.2ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 20:53:39 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlMKJcBAkifPgGbucRcRIw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "TlMKJcBAkifPgGbucRcRIw"], ["updated_at", "2018-02-20 04:53:39.902615"], ["id", 8]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 78ms (Views: 9.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 20:53:39 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.2ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+Started DELETE "/api/session" for 127.0.0.1 at 2018-02-19 20:55:16 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlMKJcBAkifPgGbucRcRIw"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2kl-AASk6ovbiigVblw2Fw"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "2kl-AASk6ovbiigVblw2Fw"], ["updated_at", "2018-02-20 04:55:16.759784"], ["id", 8]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 20ms (Views: 9.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 20:59:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 347ms (Views: 344.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 20:59:29 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (29.0ms)
+Completed 200 OK in 43ms (Views: 42.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 20:59:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 358ms (Views: 355.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 20:59:56 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.9ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 20:59:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 60ms (Views: 56.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 20:59:57 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.1ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 20:59:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 20:59:58 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.7ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:00:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 437ms (Views: 433.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:00:13 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.5ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:00:24 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yW1lXNseVjmCrzze9BKftA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yW1lXNseVjmCrzze9BKftA"], ["updated_at", "2018-02-20 05:00:25.030773"], ["id", 8]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 73ms (Views: 8.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:00:25 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.8ms)
+Completed 200 OK in 22ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/benches/22" for 127.0.0.1 at 2018-02-19 21:00:28 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"22"}
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:00:28 -0800
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 22]]
+Processing by StaticPagesController#root as HTML
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering static_pages/root.html.erb within layouts/application
+No template found for Api::BenchesController#destroy, rendering head :no_content
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 204 No Content in 125ms (ActiveRecord: 5.2ms)
+
+
+Completed 200 OK in 160ms (Views: 156.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:00:28 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (1.1ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (5.0ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:01:27 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JceNVvUBRba7d9ULMRvtrw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JceNVvUBRba7d9ULMRvtrw"], ["updated_at", "2018-02-20 05:01:27.173103"], ["id", 8]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 75ms (Views: 9.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:01:27 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.6ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:01:36 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"fuck", "lat"=>"44", "lng"=>"-122", "number_of_seats"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "fuck"], ["lat", 44.0], ["lng", -122.0], ["created_at", "2018-02-20 05:01:36.846350"], ["updated_at", "2018-02-20 05:01:36.846350"], ["number_of_seats", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.5ms)
+Completed 200 OK in 37ms (Views: 10.9ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:01:36 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.2ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/benches/34" for 127.0.0.1 at 2018-02-19 21:01:43 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:01:43 -0800
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+Processing by StaticPagesController#root as HTML
+  [1m[35mSQL (15.1ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 34]]
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 130ms (ActiveRecord: 24.6ms)
+
+
+Completed 200 OK in 426ms (Views: 422.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:01:44 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.7ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:01:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 57ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:01:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 89ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:01:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 66ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:01:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 77ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:01:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:01:58 -0800
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 147ms (Views: 143.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 102ms (Views: 99.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:01:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:02:00 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.1ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:02:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 64ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:02:01 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (57.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (59.3ms)
+Completed 200 OK in 72ms (Views: 14.8ms | ActiveRecord: 57.2ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:02:07 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PJZp4N32sxCiyeZ8y_qiWQ"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PJZp4N32sxCiyeZ8y_qiWQ"], ["updated_at", "2018-02-20 05:02:07.601377"], ["id", 8]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 75ms (Views: 9.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:02:07 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.1ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:02:18 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"sex", "lat"=>"44", "lng"=>"-122", "number_of_seats"=>"4"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (23.0ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "sex"], ["lat", 44.0], ["lng", -122.0], ["created_at", "2018-02-20 05:02:18.671433"], ["updated_at", "2018-02-20 05:02:18.671433"], ["number_of_seats", 4]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.5ms)
+Completed 200 OK in 43ms (Views: 12.8ms | ActiveRecord: 24.8ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:02:18 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.6ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/benches/35" for 127.0.0.1 at 2018-02-19 21:02:28 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"35"}
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 35]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 121ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:02:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 297ms (Views: 294.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:02:54 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (2.0ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (59.9ms)
+Completed 200 OK in 71ms (Views: 68.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:03:01 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yF3YFgyj7AZ5YWqTyHPYXA"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yF3YFgyj7AZ5YWqTyHPYXA"], ["updated_at", "2018-02-20 05:03:01.342688"], ["id", 8]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 79ms (Views: 12.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:03:01 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.8ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:03:22 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"fuck", "lat"=>"44", "lng"=>"-122", "number_of_seats"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "fuck"], ["lat", 44.0], ["lng", -122.0], ["created_at", "2018-02-20 05:03:22.899185"], ["updated_at", "2018-02-20 05:03:22.899185"], ["number_of_seats", 5]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.6ms)
+Completed 200 OK in 30ms (Views: 19.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:03:22 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (62.5ms)
+Completed 200 OK in 75ms (Views: 74.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/benches/36" for 127.0.0.1 at 2018-02-19 21:03:39 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"36"}
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 36]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 112ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:03:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 63ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:03:44 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.1ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:04:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:04:00 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.6ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:04:18 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x6tUjsA8wgktv7rdSksOZw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "x6tUjsA8wgktv7rdSksOZw"], ["updated_at", "2018-02-20 05:04:18.088106"], ["id", 8]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 79ms (Views: 12.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:04:18 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.5ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:07:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 323ms (Views: 319.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:07:11 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.1ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:07:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:07:12 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.4ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:07:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:07:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 128ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 114ms (Views: 106.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:07:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 68ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:07:12 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:07:13 -0800
+Processing by StaticPagesController#root as HTML
+  [1m[36mBench Load (4.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (11.5ms)
+  Rendering static_pages/root.html.erb within layouts/application
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 4.6ms)
+
+
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 63ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:07:13 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (10.3ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:07:18 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5A8fnCJRhe8rmbQKeWkpNg"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "5A8fnCJRhe8rmbQKeWkpNg"], ["updated_at", "2018-02-20 05:07:18.808082"], ["id", 8]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 77ms (Views: 10.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:07:18 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.8ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:07:32 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"sex", "lat"=>"44", "lng"=>"-122.55", "number_of_seats"=>"5"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "sex"], ["lat", 44.0], ["lng", -122.55], ["created_at", "2018-02-20 05:07:32.771755"], ["updated_at", "2018-02-20 05:07:32.771755"], ["number_of_seats", 5]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.7ms)
+Completed 200 OK in 23ms (Views: 12.8ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:07:32 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.7ms)
+Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/benches/37" for 127.0.0.1 at 2018-02-19 21:07:39 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"37"}
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 37]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 100ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:07:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 53ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:07:49 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.2ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:14:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 305ms (Views: 302.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:14:54 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (35.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (39.5ms)
+Completed 200 OK in 50ms (Views: 13.7ms | ActiveRecord: 35.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:14:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 64ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:14:55 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.4ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:14:59 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "U8c2a1Ehf3IeP43VdT4fag"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "U8c2a1Ehf3IeP43VdT4fag"], ["updated_at", "2018-02-20 05:14:59.318427"], ["id", 8]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 73ms (Views: 8.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:14:59 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.6ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:15:08 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"sex", "lat"=>"44", "lng"=>"-122", "number_of_seats"=>"3"}}
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "sex"], ["lat", 44.0], ["lng", -122.0], ["created_at", "2018-02-20 05:15:08.213181"], ["updated_at", "2018-02-20 05:15:08.213181"], ["number_of_seats", 3]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.5ms)
+Completed 200 OK in 35ms (Views: 13.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:15:08 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.2ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/benches/38" for 127.0.0.1 at 2018-02-19 21:15:10 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"38"}
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 38]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 112ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:15:43 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.5ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:19:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 325ms (Views: 322.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:19:33 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (68.9ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (71.5ms)
+Completed 200 OK in 83ms (Views: 13.5ms | ActiveRecord: 68.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:19:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:19:34 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.4ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:19:39 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7jZt-UT8YP1Wl3wzkaFJXw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "7jZt-UT8YP1Wl3wzkaFJXw"], ["updated_at", "2018-02-20 05:19:39.650155"], ["id", 8]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 74ms (Views: 9.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:19:39 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.3ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:19:48 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"fuck", "lat"=>"44", "lng"=>"-122", "number_of_seats"=>"4"}}
+  [1m[35m (5.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.5ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "fuck"], ["lat", 44.0], ["lng", -122.0], ["created_at", "2018-02-20 05:19:48.671442"], ["updated_at", "2018-02-20 05:19:48.671442"], ["number_of_seats", 4]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.5ms)
+Completed 200 OK in 34ms (Views: 14.3ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:19:48 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.2ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/benches/39" for 127.0.0.1 at 2018-02-19 21:19:51 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"39"}
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 39]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 107ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:19:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:19:56 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.1ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:27:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 314ms (Views: 309.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:27:51 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (5.4ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:27:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 74ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:27:52 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.8ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.5ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:27:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 124ms (Views: 121.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:27:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:27:52 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (1.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (63.9ms)
+Completed 200 OK in 80ms (Views: 78.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:27:58 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "rDeO8j7Ce0--smDes4qvqA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "rDeO8j7Ce0--smDes4qvqA"], ["updated_at", "2018-02-20 05:27:58.271561"], ["id", 8]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 70ms (Views: 9.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:27:58 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.5ms)
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:28:06 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"sex", "lat"=>"44", "lng"=>"-122", "number_of_seats"=>"3"}}
+  [1m[35m (15.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "sex"], ["lat", 44.0], ["lng", -122.0], ["created_at", "2018-02-20 05:28:06.808098"], ["updated_at", "2018-02-20 05:28:06.808098"], ["number_of_seats", 3]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.7ms)
+Completed 200 OK in 39ms (Views: 12.2ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:28:06 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.2ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/benches/40" for 127.0.0.1 at 2018-02-19 21:28:17 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"40"}
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 40]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 112ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:28:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 75ms (Views: 71.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:28:33 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.9ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:30:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 367ms (Views: 363.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:30:44 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.9ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:30:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:30:45 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.0ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:30:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:30:46 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.0ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:30:53 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AMtnmLFEF34ONYRF5Z6D-w"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "AMtnmLFEF34ONYRF5Z6D-w"], ["updated_at", "2018-02-20 05:30:53.654487"], ["id", 8]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 76ms (Views: 12.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:30:53 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.8ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:04 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"ass", "lat"=>"44", "lng"=>"-122", "number_of_seats"=>"4"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (16.6ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "ass"], ["lat", 44.0], ["lng", -122.0], ["created_at", "2018-02-20 05:31:04.397535"], ["updated_at", "2018-02-20 05:31:04.397535"], ["number_of_seats", 4]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.5ms)
+Completed 200 OK in 39ms (Views: 12.9ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:04 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.9ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/benches/41" for 127.0.0.1 at 2018-02-19 21:31:06 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"41"}
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 41]]
+  [1m[35m (21.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::BenchesController#destroy, rendering head :no_content
+Completed 204 No Content in 132ms (ActiveRecord: 22.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:11 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.6ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 347ms (Views: 342.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:41 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.1ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:41 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (1.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (5.2ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 82ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:42 -0800
+Processing by StaticPagesController#root as HTML
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 90ms (Views: 87.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 105ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:42 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.9ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.3ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 84ms (Views: 80.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:43 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.7ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:31:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 118ms (Views: 115.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 123ms (Views: 120.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:43 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.1ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:31:50 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UvJKlV2gU9YRIQCCHwPhPA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "UvJKlV2gU9YRIQCCHwPhPA"], ["updated_at", "2018-02-20 05:31:50.065204"], ["id", 8]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 69ms (Views: 8.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:31:50 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.0ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:32:02 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"fucker bench", "lat"=>"44", "lng"=>"-122.3343", "number_of_seats"=>"5"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "fucker bench"], ["lat", 44.0], ["lng", -122.3343], ["created_at", "2018-02-20 05:32:02.016759"], ["updated_at", "2018-02-20 05:32:02.016759"], ["number_of_seats", 5]]
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.4ms)
+Completed 200 OK in 37ms (Views: 11.4ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:32:02 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.5ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:33:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 315ms (Views: 311.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:33:51 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (69.2ms)
+Completed 200 OK in 79ms (Views: 78.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:33:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:33:52 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (1.4ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:33:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 71ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:33:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:33:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 75ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 78ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:33:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 53ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:33:52 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:33:53 -0800
+Processing by StaticPagesController#root as HTML
+  [1m[36mBench Load (9.9ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered api/benches/index.json.jbuilder (12.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 53ms (Views: 42.4ms | ActiveRecord: 9.9ms)
+
+
+Completed 200 OK in 119ms (Views: 116.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:33:53 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.4ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:33:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 68ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:33:53 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.8ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.6ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:34:06 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qqFL68dmbkmEgSdJJ-isXw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "qqFL68dmbkmEgSdJJ-isXw"], ["updated_at", "2018-02-20 05:34:06.321042"], ["id", 8]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 70ms (Views: 9.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:34:06 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.2ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.3ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:34:17 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"asshole", "lat"=>"44", "lng"=>"-122.3", "number_of_seats"=>"5"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "asshole"], ["lat", 44.0], ["lng", -122.3], ["created_at", "2018-02-20 05:34:17.145472"], ["updated_at", "2018-02-20 05:34:17.145472"], ["number_of_seats", 5]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.7ms)
+Completed 200 OK in 27ms (Views: 16.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:34:17 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (3.5ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/benches/43" for 127.0.0.1 at 2018-02-19 21:34:53 -0800
+Processing by Api::BenchesController#destroy as JSON
+  Parameters: {"id"=>"43"}
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT  "benches".* FROM "benches" WHERE "benches"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:34:53 -0800
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Processing by StaticPagesController#root as HTML
+  [1m[35mSQL (3.3ms)[0m  [1m[31mDELETE FROM "benches" WHERE "benches"."id" = $1[0m  [["id", 43]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering static_pages/root.html.erb within layouts/application
+No template found for Api::BenchesController#destroy, rendering head :no_content
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 204 No Content in 121ms (ActiveRecord: 12.2ms)
+
+
+Completed 200 OK in 162ms (Views: 157.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:34:53 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (17.2ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-19 21:35:02 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ass", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ass"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kJeQVvua8rlNc6j0njD9eg"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "kJeQVvua8rlNc6j0njD9eg"], ["updated_at", "2018-02-20 05:35:02.882728"], ["id", 8]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 72ms (Views: 9.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:35:02 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.5ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/benches" for 127.0.0.1 at 2018-02-19 21:35:15 -0800
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"warm ass", "lat"=>"44.3", "lng"=>"-122.55567", "number_of_seats"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "number_of_seats") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "warm ass"], ["lat", 44.3], ["lng", -122.55567], ["created_at", "2018-02-20 05:35:15.290253"], ["updated_at", "2018-02-20 05:35:15.290253"], ["number_of_seats", 5]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/show.json.jbuilder (0.5ms)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:35:15 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (2.6ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2018-02-19 21:35:23 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kJeQVvua8rlNc6j0njD9eg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "85r3C40s68LsgLqi1vCsNw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "ass"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "85r3C40s68LsgLqi1vCsNw"], ["updated_at", "2018-02-20 05:35:23.907401"], ["id", 8]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 17ms (Views: 10.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-19 21:35:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 55ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for 127.0.0.1 at 2018-02-19 21:35:25 -0800
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  Rendered api/benches/index.json.jbuilder (9.1ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.3ms)
+
+

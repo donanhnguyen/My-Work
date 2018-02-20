@@ -28,7 +28,7 @@ class App extends React.Component {
 
     render () {
         return (
-            <div class="everything">
+            <div className="everything">
                 <header>
                     <h1>Welcome to BenchBNB bitch</h1>
             

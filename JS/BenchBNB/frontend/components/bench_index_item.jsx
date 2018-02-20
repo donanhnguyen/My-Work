@@ -8,12 +8,12 @@ class BenchIndexItem extends React.Component {
         super(props);
     }
 
-
     removeBench (event) {
         event.preventDefault();
         console.log(this.props);
         this.props.deleteBench(this.props.bench);
         window.location.reload();
+      
     }
 
     deleteButton () {

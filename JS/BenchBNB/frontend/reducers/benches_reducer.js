@@ -7,9 +7,11 @@ const benchesReducer = (state = {}, action) => {
             return action.benches;
 
         case RECEIVE_BENCH:
-            return action.bench;
-            // const newBench = {[action.bench.id]: action.bench};
-            // return merge({}, state, newBench);
+            // return action.bench; 
+            // const deletedBench = action.bench;
+            // return state.filter(bench => bench.id !== deletedBench.id);
+            const newBench = {[action.bench.id]: action.bench};
+            return merge({}, state, newBench);
         default:
             return state;
     }

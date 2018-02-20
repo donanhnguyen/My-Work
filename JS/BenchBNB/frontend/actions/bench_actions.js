@@ -31,6 +31,6 @@ export const createBench = (bench) => {
 
 export const deleteBench = (bench) => {
     return function (dispatch) {
-        BenchApiUtil.deleteBench(bench.id);
+        BenchApiUtil.deleteBench(bench.id).then((bench) => (dispatch(receiveBench(bench))) );
     }
 }

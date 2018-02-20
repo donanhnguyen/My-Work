@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BenchIndexItem from './bench_index_item';
+import {withRouter} from 'react-router-dom';
 
 class BenchIndex extends React.Component {
 

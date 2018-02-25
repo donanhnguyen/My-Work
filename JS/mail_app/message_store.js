@@ -17,8 +17,7 @@ let messages = {
       {to: "person@mail.com", subject: "Piss off", body: "Go to hell"}
     ],
     inbox: [
-      {from: "grandma@mail.com", subject: "Cunts", body:
-  "Did you know that the mom from the Arkangel episode of Black Mirror is a two-bit cunt?"},
+      {from: "grandma@mail.com", subject: "Cunts", body: "Ayyyyyy bitchhh"},
       {from: "person@mail.com", subject: "Taking a shit", body: "I just took a shit today - Ki"}
     ]
   };

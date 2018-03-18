@@ -1,0 +1,149 @@
+// Place all the styles related to the api/cities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Atlanta {
+    background-image: url('Atlanta.jpg');
+    background-size: 100% 100%;
+}
+
+.Austin {
+    background-image: url('Austin.jpg');
+    background-size: 100% 100%;
+}
+
+.Boston {
+    background-image: url('Boston.jpg');
+    background-size: 100% 100%;
+}
+
+.Charlotte {
+    background-image: url('Charlotte.jpg');
+    background-size: 100% 100%;
+}
+
+.Chicago {
+    background-image: url('Chicago.jpg');
+    background-size: 100% 100%;
+}
+
+
+.Dallas {
+    background-image: url('Dallas.jpg');
+    background-size: 100% 100%;
+}
+
+.Denver {
+    background-image: url('Denver.jpg');
+    background-size: 100% 100%;
+}
+
+.Houston {
+    background-image: url('Houston.jpg');
+    background-size: 100% 100%;
+}
+
+.LasVegas {
+    background-image: url('Las Vegas.jpg');
+    background-size: 100% 100%;
+}
+
+.LosAngeles {
+    background-image: url('Los Angeles.jpg');
+    background-size: 100% 100%;
+}
+
+.Miami {
+    background-image: url('Miami.jpg');
+    background-size: 100% 100%;
+}
+
+.Minneapolis {
+    background-image: url('Minneapolis.jpg');
+    background-size: 100% 100%;
+}
+
+
+.NewYork {
+    background-image: url('New York.jpg');
+    background-size: 100% 100%;
+}
+
+.Philadelphia {
+    background-image: url('Philadelphia.jpg');
+    background-size: 100% 100%;
+}
+
+.Phoenix {
+    background-image: url('Phoenix.jpg');
+    background-size: 100% 100%;
+}
+
+.Portland {
+    background-image: url('Portland.jpg');
+    background-size: 100% 100%;
+}
+
+.SanDiego {
+    background-image: url('San Diego.jpg');
+    background-size: 100% 100%;
+}
+
+
+.SanFrancisco {
+    background-image: url('San Francisco.jpg');
+    background-size: 100% 100%;
+}
+
+.Seattle {
+    background-image: url('Seattle.jpg');
+    background-size: 100% 100%;
+}
+
+.WashingtonDC {
+    background-image: url('Washington DC.jpg');
+    background-size: 100% 100%;
+}
+
+
+.city-item {
+    text-align: center;
+    width: 190px;
+    height: 170px;
+    margin: 7px;
+    opacity: 0.85;
+}
+
+.city-item:hover {
+  
+    border: 5px solid rgb(2, 0, 128);
+    width: 200px;
+    height: 180px;
+    opacity: 1.0;
+
+}
+
+
+.city-item-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.city-profile-header {
+    font-size: 25px;
+    margin-left: 10px;
+    color: rgb(65, 65, 65);
+}
+
+.city-profile-pic {
+    background-image: url('CityStreet2');
+    background-size: 100% 100%;
+
+    min-height: 350px;
+    border: 2px solid gray;
+}
+
+.city-post-form {
+    padding: 20px;
+    font-size: 20px;
+}

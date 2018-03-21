@@ -16,15 +16,23 @@
     color: white;
 }
 
-.session-form input[type="submit"] {
-    width: 200px;
-    font-size: 20px;
-}
 
 .session-form-background {
     background-image: url('CityStreet.jpg');
     // background-size: 100%;
     // min-width: 900px;
- 
     background-size: 100% 100%;
+}
+
+.session-submit-button {
+    padding: 7px;
+    font-size: 17px;
+    border-radius: 10px;
+    min-width: 200px;
+    color: white;
+    background-color: rgb(119, 174, 233);
+}
+
+.session-submit-button:hover {
+    background-color: rgb(249, 129, 129);
 }

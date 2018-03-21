@@ -7,8 +7,11 @@ import configureStore from './store/store';
 
 import {fetchCities, fetchCity} from './actions/city_actions';
 
+import {fetchPosts} from './actions/post_actions';
+
 window.fetchCities = fetchCities;
 window.fetchCity = fetchCity;
+window.fetchPosts = fetchPosts;
 
 document.addEventListener("DOMContentLoaded", () => {
 

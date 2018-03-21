@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 
     currentUser: state.session.currentUser,
     currentCity: state.entities.currentCity,
-    categories: state.entities.categories
+    categories: Object.keys(state.entities.categories).map((key) => state.entities.categories[key])
 });
 
 

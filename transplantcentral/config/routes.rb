@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, defaults: {format: :json} do
     resources :cities, only: [:index, :show]
-    resources :posts, only: [:create]
+    resources :posts, only: [:create, :index, :show, :delete]
     resources :categories, only: [:index, :show]
     # resource :user, only: [:create]
     resources :users, only: [:create]

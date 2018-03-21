@@ -10,42 +10,57 @@ import {
     withRouter
   } from 'react-router-dom';
 
-  import CityPostForm from './city_post_form';
+  import CityPostFormContainer from './city_post_form_container';
 
 class CityShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentCityId: null,
-            currentCity: null,
-            categories: null,
+            currentCategory: null,
+            currentCategoryId: null
         }
+        
     }
 
-
+ 
+    changeCategory (event) {
+        event.preventDefault();
+        this.setState({
+            currentCategory: event.currentTarget.innerHTML,
+            currentCategoryId: event.currentTarget.getAttribute('id')
+        })
+      
+    }
 
     componentDidMount () {
 
         const {fetchCity, fetchCategories} = this.props;
 
-        fetchCity(this.props.match.params.id);
+        fetchCity(this.props.match.params.city_id);
         
         fetchCategories();
 
     }
 
+
+
     render () {
 
         const {currentCity, categories} = this.props;
 
-            console.log('fuck u');
-            if (categories.length > 0) {
-          
-                 console.log(categories[0]);
-                 
-            }
-           
-
+        const all_categories = categories.map((category) => {
+            return <li 
+                class='post-tab' 
+                onClick={this.changeCategory.bind(this)}
+                id={`${category.id}`}
+                tabIndex={`${category.id}`}
+                >
+                {category.name}
+            </li>
+        });
+ 
+        const profilePicClass = currentCity.name ? currentCity.name.split(' ').join('') + "Page" : null;
+    
             return (
                 <div>
                     
@@ -53,22 +68,25 @@ class CityShow extends React.Component {
                         <h1>{currentCity.name}</h1>
                     </div>
 
-                    <div class="city-profile-pic">
+                   <div class={`city-profile-pic ${profilePicClass}`}>
 
                     </div>
 
+                    <br />
 
                     <div>
- 
-                        <CityPostForm />
+                        <CityPostFormContainer currentCategoryId={this.state.currentCategoryId}
+                        currentCityObject={currentCity}/>
                     </div>
 
 
-                    <div>
-                       
+                    <div class='post-tabs'>
+                        <ul>
+                            {all_categories}
+                        </ul>
+                        
                     </div>
-
-
+                     
                 </div>
 
 

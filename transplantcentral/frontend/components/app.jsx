@@ -40,7 +40,7 @@ class App extends React.Component {
 
                     <Route path="/home" component={HomePageContainer} />
 
-                    <Route path="/cities/:id" component={CityShowContainer}  />
+                    <Route path="/cities/:city_id" component={CityShowContainer}  />
 
                     <AuthRoute path="/login" component={SessionFormContainer} />
                     <AuthRoute path="/signup" component={SessionFormContainer} />

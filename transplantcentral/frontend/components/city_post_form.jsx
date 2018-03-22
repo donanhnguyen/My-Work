@@ -15,17 +15,17 @@ class CityPostForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            subject: '',
-            content: '',
+            subject: null,
+            content: null,
             rating: null,
-            user_id: this.props.currentUser ? this.props.currentUser.id : '',
-            city_id: this.props.currentCity.id,
+            user_id: this.props.currentUser ? this.props.currentUser.id : null,
+            city_id: null,
             category_id: null,
         }
     }
 
     formButton () {
-        // if (this.props.currentUser) {
+        if (this.props.currentUser) {
             return (
                 <div>
                     <button 
@@ -36,15 +36,15 @@ class CityPostForm extends React.Component {
                     </button>
                 </div>
             )
-        // } else {
-        //     return (
-        //         <div>
-        //             <p>You are not logged in. To write a review, please <Link to='/login'>
-        //             log in</Link> or <Link to='/signup'> sign up!</Link>
-        //             </p>
-        //         </div>
-        //     )
-        // }   
+        } else {
+            return (
+                <div>
+                    <p>You are not logged in. To write a review, please <Link to='/login'>
+                    log in</Link> or <Link to='/signup'> sign up!</Link>
+                    </p>
+                </div>
+            )
+        }   
     }
 
 
@@ -53,17 +53,27 @@ class CityPostForm extends React.Component {
         postForm.classList.toggle('hide-this-shit');
     }
 
+    clearForm () {
+        const postFormReset = ReactDOM.findDOMNode(this.refs.postFormReset);
+        postFormReset.reset();
+        const postCategory = ReactDOM.findDOMNode(this.refs.postCategory);
+        const postRating = ReactDOM.findDOMNode(this.refs.postRating);
+        postCategory.selectedIndex = 0;
+        postRating.selectedIndex = 0;
+    }
+
     submitPost (event) {
         event.preventDefault();
         const createdPost = Object.assign({}, this.state);
         this.props.createPost(createdPost);
+        this.clearForm();
     }
 
     update (field) {
         return (event) => {
             this.setState({
                 [field]: event.currentTarget.value,
-
+                city_id: this.props.currentCity.id ? this.props.currentCity.id : null
             })
         }
     }
@@ -79,7 +89,7 @@ class CityPostForm extends React.Component {
                 <br />
 
                 <div ref='postForm' class="post-form-container hide-this-shit">
-                    <form onSubmit={this.submitPost.bind(this)}>
+                    <form ref="postFormReset" onSubmit={this.submitPost.bind(this)}>
                         <label for='subject' >Subject</label>
                             <br />
                         <input class='post-subject' id='subject' type='text' onChange={this.update('subject')}/>

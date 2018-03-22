@@ -10,55 +10,29 @@ import {
     withRouter
   } from 'react-router-dom';
 
-  import CityPostFormContainer from './city_post_form_container';
+import CityPostFormContainer from './city_post_form_container';
+
+import PostsDisplayContainer from './posts_display_container';
 
 class CityShow extends React.Component {
     constructor(props) {
-        super(props);
-        this.state = {
-            currentCategory: null,
-            currentCategoryId: null
-        }
-        
+        super(props); 
     }
 
- 
-    changeCategory (event) {
-        event.preventDefault();
-        this.setState({
-            currentCategory: event.currentTarget.innerHTML,
-            currentCategoryId: event.currentTarget.getAttribute('id')
-        })
-      
-    }
 
     componentDidMount () {
 
         const {fetchCity, fetchCategories} = this.props;
-
         fetchCity(this.props.match.params.city_id);
         
-        fetchCategories();
-
     }
 
 
 
     render () {
 
-        const {currentCity, categories} = this.props;
+        const {currentCity} = this.props;
 
-        const all_categories = categories.map((category) => {
-            return <li 
-                class='post-tab' 
-                onClick={this.changeCategory.bind(this)}
-                id={`${category.id}`}
-                tabIndex={`${category.id}`}
-                >
-                {category.name}
-            </li>
-        });
- 
         const profilePicClass = currentCity.name ? currentCity.name.split(' ').join('') + "Page" : null;
     
             return (
@@ -75,17 +49,11 @@ class CityShow extends React.Component {
                     <br />
 
                     <div>
-                        <CityPostFormContainer currentCategoryId={this.state.currentCategoryId}
+                        <CityPostFormContainer
                         currentCityObject={currentCity}/>
                     </div>
 
-
-                    <div class='post-tabs'>
-                        <ul>
-                            {all_categories}
-                        </ul>
-                        
-                    </div>
+                    <PostsDisplayContainer />
                      
                 </div>
 

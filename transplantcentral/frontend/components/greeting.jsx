@@ -13,15 +13,23 @@ import {
 class Greeting extends React.Component {
 
 
+    currentUserHeading () {
+        if (this.props.currentUser) {
+            return <p>You are logged in as: {this.props.currentUser.username}</p>
+        }
+    }
+
     render () {
+
         return (
-            <div className="greeting-container">
-    
-                    
-                <h1>Welcome to TransplantCentral</h1>
-                <p>Where you can review your favorite city</p>
-             
-                
+            <div>
+                {this.currentUserHeading()}
+
+                <div className="greeting-container">
+                    <h1>Welcome to TransplantCentral</h1>
+                    <p>Where you can review your favorite city</p>
+                </div>
+
             </div>
         )
     }

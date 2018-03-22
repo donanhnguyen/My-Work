@@ -13,7 +13,7 @@ import NavContainer from './nav_container';
 
 import Footer from './footer';
 
-import Greeting from './greeting';
+import GreetingContainer from './greeting_container';
 
 
 import {AuthRoute, ProtectedRoute} from '../util/route_util.jsx';
@@ -36,7 +36,7 @@ class App extends React.Component {
             <div>
                     <NavContainer />
 
-                    <Route exact path="/" component={Greeting} />
+                    <Route exact path="/" component={GreetingContainer} />
 
                     <Route path="/home" component={HomePageContainer} />
 

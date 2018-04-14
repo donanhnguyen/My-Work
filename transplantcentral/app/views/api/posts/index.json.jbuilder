@@ -1,1 +1,0 @@
-json.array! @all_posts, :id, :subject, :content, :rating, :user_id, :city_id, :category_id

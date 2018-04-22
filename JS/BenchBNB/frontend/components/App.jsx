@@ -27,6 +27,7 @@ class App extends React.Component {
     }
 
     render () {
+        console.log('sex');
         return (
             <div className="everything">
                 <header>
